@@ -54,29 +54,27 @@ for i in indexes:
 #prompts for correct index if number too large
 #new item prompt includes reference to old item that will be replaced
 
-
-
 def replacement():
     new_index1 = int(input('Use index number to select first item to replace, using printed list above as reference. '))
     new_index2 = int(input('Use index number to select last item to replace, using printed list above as reference. New item(s) will replace existing item(s) including this second index number. '))
-    difference = new_index2 - new_index1
-    count = 0
-    while count <= difference:
-        old_item = groceries1[new_index1 + count]
-
-        if new_index1 > len(groceries1):
-            print('boobeebaaboop! Seriously dude, look at your list again... It is not that big.')
-            print('Re-enter, boobeebaaboop, you number dummy.')
-            return replacement()
-        elif new_index2 > len(groceries1): 
-            print('MY GOODNESS MAN! Your list is not that big. boobeebaaboop!')  
-            print('Please re-enter your number stupid.')
-            return replacement()
-        else:                                                        
+    if new_index1 > len(groceries1):
+        print('First index number too high. ')
+        print('Re-enter first index number. ')
+        return replacement()
+    elif new_index2 > len(groceries1): 
+        print('Second index number too high. ')  
+        print('Please re-enter second index number.')
+        return replacement()
+    else:        
+        difference = new_index2 - new_index1
+        count = 0
+        while count <= difference:
+            old_item = groceries1[new_index1 + count]                                                
             new_item = input(f'Name new item to replace {old_item}: ')
             groceries1[new_index1 + count] = new_item                        #new_index1 + count gets to the current index number // sets value of new_item to the current index number
             count += 1  
 
+#call the function. This initiates the process. Other function calls prompt for index numbers again, then continue evaluation if numbers correct.
 replacement()
 
 #print updated combined list
