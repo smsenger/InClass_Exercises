@@ -1,5 +1,5 @@
 #function that starts with empty dict, takes user input, uses for loop to match up dict key to value(data from user input)
-
+#needs hardening to prepare for incorrect user inputs
 def hotel_data():    
     hotel = {}
     hotel['room_num'] = int(input('Please select a room number for customer and press ENTER. '))
