@@ -32,7 +32,6 @@ def is_vacant():
             print(f'Room {room_number} is vacant.')
         else:
             print(f'Hotel room {room_number} is occupied.')
-    #print(hotel)
 
 is_vacant()
 
