@@ -48,7 +48,7 @@ for i in indexes:
 #This will work on any size list. 
 
 
-
+#Replace items on a list within a partiular range
 #This starts the count of inputs at 0, then continues until the difference between the second and first index has been reached.
 #Assigns value to old_item by referencing the current index number in question
 #prompts for correct index if number too large

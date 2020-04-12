@@ -1,7 +1,17 @@
 #dictionary of hotel rooms paired with name
 hotel = {
-    'hotel name' : 'Vegas Fancy'
-    '101': {},
+    {'hotel name' : 'Vegas Fancy'
+    {'room' : '101', {'guest' : {'name' : 'Sterling Archer', 'phone' : 1122334455, 'prepaid' : 'False'}}},
+    '102': {},
+    '103': {},
+    '104': {},
+    '105': {},
+}}
+
+#dictionary of hotel rooms paired with name
+hotel = {
+     {'hotel name' : 'Fancy Plus'
+    {'room' : '101', {'guest' : {'name' : 'Lana Kane', 'phone' : 2233445566, 'prepaid' : 'True'}}},
     '102': {},
     '103': {},
     '104': {},
@@ -10,17 +20,8 @@ hotel = {
 
 #dictionary of hotel rooms paired with name
 hotel = {
-    'hotel_name' : 'Super Fancy!'
-    '101': {},
-    '102': {},
-    '103': {},
-    '104': {},
-    '105': {},
-}
-
-#dictionary of hotel rooms paired with name
-hotel = {
-    'hotel_name' : 'Fancy Plus!'
+    {'hotel name' : 'Fancy Plus'
+    {'room' : '101', {'guest' : {'name' : 'Pam Poovey', 'phone' : 2233445566, 'prepaid' : 'True'}}},
     '101': {},
     '102': {},
     '103': {},
@@ -40,12 +41,48 @@ hotel = {
 #upon check-out, print out whether or not cust has paid
 
 
-#Create a while True loop to show the following menu:
-1. print hotel room status
-2. check in customer
-3. check out customer4. quite
+# #Create a while True loop to show the following menu:
+# 1. print hotel room status
+# 2. check in customer
+# 3. check out customer
+# 4. quit
 
 
+def hotel_functions():
+    #input: ask what they want to do
+    user_instruction = input('''Please select a function from those below. Type the corresponding number and press ENTER. 
+    1. Print hotel room status
+    2. Customer check-in
+    3. Customer check-out  
+    4. Quit
+
+    ''')
+
+    if user_instruction == '1':                                #if user input == check all vacancies, run function 
+        return is_vacant()    
+                                                         
+    elif user_instruction == '2':                              #if user input == check specific room, run function
+        single_is_vacant()
+    
+    elif user_instruction == '3':
+        check_in()                                             #if user input == check in, run check_in()
+    
+    elif user_instruction == '4':                              #if user input == check out, run check_out()
+        check_out()
+    
+    else:
+        print('Please select from available options')
+        hotel_functions()
+    print('Have a nice day!')
+
+hotel_functions()
+
+
+
+
+
+
+#Functions called in last function:
 
 empty_room = {}
 #function that lists vacancy status of all rooms
@@ -60,7 +97,8 @@ def is_vacant():
 
 #function that checks in hotel guests, asking for name, phone number, and prepay status
 empty_room = {}
-def check_in():      #in combined version, call is_vacant instead of using this code
+
+def check_in():      
     is_vacant()
 
     select_room = input('Please type a room number from available options and press ENTER. ' '\n').strip()
@@ -140,6 +178,15 @@ def single_is_vacant():
         except:
             print('Invalid room number. ')
 # single_is_vacant()
+
+
+
+
+
+
+
+
+
 
 
 

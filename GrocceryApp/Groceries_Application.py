@@ -41,6 +41,7 @@
 
 groceries = []
 
+
 main_menu = '''
 
 1. Print List
@@ -66,10 +67,15 @@ update_menu = '''
 4. Main Menu
 '''
 delete_menu = '''
-1. Print items
-2. Delete an item
-3. Delete multiple items
-4. Return to main menu
+1. Print Items
+2. Delete an Item
+3. Delete Multiple Items
+4. Return to Main Menu
+'''
+
+item_status_menu = '''
+1. Add to List of Acquired Items
+2. Main Menu
 '''
 
 #PUT CODE FOR EACH MENU IN A FUNCTION, THEN CALL FUNCTION LATER AS PART OF PROGRAM FLOW
@@ -107,33 +113,33 @@ while True:
             print(main_menu)
     if menu_choice == 3:
         print(update_menu)
-        new_index1 = int(input('Use index number to select first item to replace, using printed list above as reference. '))
+        new_index1 = int(input('Use index number to select first item to replace, using printed list above for reference. '))
         if update_choice == 2:
             if new_index1 > len(groceries):
                 print('Index number too high. ')
                 print('Re-enter index number. ')
-                new_index1 = int(input('Use index number to select first item to replace, using list above as reference. '))
+                new_index1 = int(input('Use index number to select first item to replace, using list above for reference. '))
             else:        
                 difference = new_index2 - new_index1
                 count = 0
-            while count <= difference:
-                old_item = groceries[new_index1 + count]                                                
-                new_item = input(f'Name new item to replace {old_item}: ')
-                groceries[new_index1 + count] = new_item                        #new_index1 + count gets to the current index number // sets value of new_item to the current index number
-                count += 1  
-                for i in indexes:
-                    print(f'{i}: {groceries[i]}')
+                while count <= difference:
+                    old_item = groceries[new_index1 + count]                                                
+                    new_item = input(f'Name new item to replace {old_item}: ')
+                    groceries[new_index1 + count] = new_item                        #new_index1 + count gets to the current index number // sets value of new_item to the current index number
+                    count += 1  
+                    for i in indexes:
+                        print(f'{i}: {groceries[i]}')
         if update_choice == 3:
-            new_index1 = int(input('Use index number to select first item to replace, using printed list above as reference. '))
-            new_index2 = int(input('Use index number to select last item to replace, using printed list above as reference. New item(s) will replace existing item(s) including this second index number. '))
+            new_index1 = int(input('Use index number to select first item to replace, using printed list above for reference. '))
+            new_index2 = int(input('Use index number to select last item to replace, using printed list above for reference. New item(s) will replace existing item(s) including this second index number. '))
             if new_index1 > len(groceries):
                 print('First index number too high. ')
                 print('Re-enter first index number. ')
-                new_index1 = int(input('Use index number to select first item to replace, using printed list above as reference. '))           
+                new_index1 = int(input('Use index number to select first item to replace, using printed list above for reference. '))           
             elif new_index2 > len(groceries): 
                 print('Second index number too high. ')  
                 print('Please re-enter second index number.')
-                new_index2 = int(input('Use index number to select last item to replace, using printed list above as reference. New item(s) will replace existing item(s) including this second index number. '))
+                new_index2 = int(input('Use index number to select last item to replace, using printed list above for reference. New item(s) will replace existing item(s) including this second index number. '))
             else:        
                 difference = new_index2 - new_index1
                 count = 0
@@ -154,32 +160,51 @@ while True:
         if delete_choice == 2:
             for i in indexes:
                 print(f'{i}: {groceries[i]}')
-            remove = int(input('Please type index number of menu item to delete, using list above as reference. '))
+            remove = int(input('Please type index number of menu item to delete, using list above for reference. '))
             if remove > len(groceries):
                 print('Index number too high. ')
                 print('Re-enter index number. ')
-                remove = int(input('Please type index number of menu item to delete, using list above as reference.'))
+                remove = int(input('Please type index number of menu item to delete, using list above for reference.'))
             else:
                 del groceries[remove]
         if delete_choice == 3:
             for i in indexes:
                 print(f'{i}: {groceries[i]}')
-            remove = int(input('Please type index number of menu item to delete, using list above as reference.'))
-            remove2 = int(input('Use index number to select last item to delete, using list above as reference. '))
+            remove = int(input('Please type index number of menu item to delete, using list above for reference.'))
+            remove2 = int(input('Use index number to select last item to delete, using list above for reference. '))
             if remove > len(groceries):
                 print('First index number too high. ')
                 print('Re-enter first index number. ')
-                remove = int(input('Please type index number of menu item to delete, using list above as reference.'))
+                remove = int(input('Please type index number of menu item to delete, using list above for reference.'))
             elif remove2 > len(groceries): 
                 print('Second index number too high. ')  
                 print('Please re-enter second index number.')
-                remove2 = int(input('Use index number to select last item to delete, using list above as reference. '))
+                remove2 = int(input('Use index number to select last item to delete, using list above for reference. '))
             else:  
                 del groceries [remove : remove2]
                 print(groceries)
         if delete_choice == 4:
             print(main_menu)
+    if menu_choice == 5:
+        print(item_status_menu)
+        status_list = []
+        for i in indexes:
+            print(f'{i}: {groceries[i]}')
+        status_menu = int(input('Use index number to select item and change status, using the above list for reference. '))
+        if status_menu == 1:
+            item_status = input('Please type the name of the item that has been acquired, then press ENTER. ')
+            if item == '':                                        #if enter empty string break out of loop // alt: if len(item) == 0
+                break        
+            else:
+                status_list.append(item_status)
+                del groceries[item_status]
+                for i in indexes:
+                    print(f'{i}: {status_list[i]}')
+                for i in indexes:
+                    print(f'{i}: {status_list[i]}')       
+        if status_menu == 2:
+            print(main_menu)
     if menu_choice == 6:
+        print('Thank you for using the Grocery List App! Mmmbuh-bye.'')
         break
-
-print('Thank you for using the grocery list app!  Mmmbuh-bye.')
+item_status_menu = '''

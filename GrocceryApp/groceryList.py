@@ -11,6 +11,7 @@
 #in an infinite while loop, prompt user for an item
 #append the item to the list
 #print the list after you add the item
+#will prompt then print repeatedly because no end condition set
 
 groceries = []
 while True:

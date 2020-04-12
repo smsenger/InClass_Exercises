@@ -2,12 +2,12 @@
 
 groceries1 = []
 
-while len(groceries1) < 3:
+while len(groceries1) < 3:                              #list one contains whatever user enters up to three entries.
     item = input('What do you need from the store? ')
     groceries1.append(item)
 
 
-groceries2 = []
+groceries2 = []                                         #list two contains whatever user enters up to three entries.
 while len(groceries2) < 3:
     item = input('What do you need from the store? ')
     groceries2.append(item)
