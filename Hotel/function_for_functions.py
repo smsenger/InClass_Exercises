@@ -23,7 +23,7 @@ hotel = {
 
 
 
-#Functions called in last function:
+#Functions called in function that incorporates all function (last function):
 
 empty_room = {}
 #function that lists vacancy status of all rooms
@@ -126,7 +126,7 @@ def hotel_functions():
     #input: ask what they want to do
     user_instruction = input('''Please select a function from those below. Type the corresponding number and press ENTER. 
     1. Check all vacancies
-    2. Check room occupancy status
+    2. Check single room occupancy status
     3. Customer check-in
     4. Customer check-out     
     ''')
@@ -135,13 +135,13 @@ def hotel_functions():
         return is_vacant()    
                                                          
     elif user_instruction == '2':                              #if user input == check specific room, run function
-        single_is_vacant()
+        return single_is_vacant()
     
     elif user_instruction == '3':
-        check_in()                                             #if user input == check in, run check_in()
+        return check_in()                                             #if user input == check in, run check_in()
     
     elif user_instruction == '4':                              #if user input == check out, run check_out()
-        check_out()
+        return check_out()
     
     else:
         print('Please select from available options')
