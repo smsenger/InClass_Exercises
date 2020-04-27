@@ -28,14 +28,14 @@ Super_Fancy = {
 
 # hotels = [Vegas_Fancy, Fancy_Plus, Super_Fancy]
 
-print Vegas_Fancy.get('Hotel Name')
+# print Vegas_Fancy.get('Hotel Name', 'none')
 empty_room = {}
-#function that lists vacancy status of all rooms
-# def is_vacant(hotel):
-#     for key in hotel:
-#         if key == empty_room:
-#             print(f'Room {key} is vacant.')
-#         else:
-#             print(f'Hotel room {key} is occupied.')    
+function that lists vacancy status of all rooms
+def is_vacant(hotel):
+    for key in hotel:
+        if key == empty_room:
+            print(f'Room {key} is vacant.')
+        else:
+            print(f'Hotel room {key} is occupied.')    
        
-# is_vacant(Vegas_Fancy)
+is_vacant(Vegas_Fancy)

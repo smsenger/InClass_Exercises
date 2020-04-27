@@ -160,16 +160,16 @@ def threeHotel_functions():
             4. Customer check-out     
             ''')
             if user_instruction == '1':                                #if user input == check all vacancies, run function 
-                return is_vacant(Vegas_Fancy)    
+                return is_vacant(hotel)    
                                                             
             elif user_instruction == '2':                              #if user input == check specific room, run function
-                return single_is_vacant(Vegas_Fancy, hotel_room)
+                return single_is_vacant(hotel, hotel_room)
             
             elif user_instruction == '3':
                 return check_in(hotel)                                             #if user input == check in, run check_in()
             
             elif user_instruction == '4':                              #if user input == check out, run check_out()
-                return check_out(Vegas_Fancy)
+                return check_out(hotel)
             
             else:
                 print('Please select from available options')
@@ -187,16 +187,16 @@ def threeHotel_functions():
             4. Customer check-out     
             ''')
             if user_instruction == '1':                                #if user input == check all vacancies, run function 
-                return is_vacant(Fancy_Plus)    
+                return is_vacant(hotel)    
                                                             
             elif user_instruction == '2':                              #if user input == check specific room, run function
-                return single_is_vacant(Fancy_Plus, hotel_room)
+                return single_is_vacant(hotel, hotel_room)
             
             elif user_instruction == '3':
                 return check_in()                                             #if user input == check in, run check_in()
             
             elif user_instruction == '4':                              #if user input == check out, run check_out()
-                return check_out(Fancy_Plus)
+                return check_out(hotel)
             
             else:
                 print('Please select from available options')
@@ -214,16 +214,16 @@ def threeHotel_functions():
             4. Customer check-out     
             ''')
             if user_instruction == '1':                                #if user input == check all vacancies, run function 
-                return is_vacant(Super_Fancy)    
+                return is_vacant(hotel)    
                                                             
             elif user_instruction == '2':                              #if user input == check specific room, run function
-                return single_is_vacant(Super_Fancy, hotel_room)
+                return single_is_vacant(hotel, hotel_room)
             
             elif user_instruction == '3':
                 return check_in()                                             #if user input == check in, run check_in()
             
             elif user_instruction == '4':                              #if user input == check out, run check_out()
-                return check_out(Fancy_Plus)
+                return check_out(hotelFancy_Plus)
             
             else:
                 print('Please select from available options')
